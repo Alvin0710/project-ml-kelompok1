@@ -19,7 +19,7 @@
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
     integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
 
-  <title>Plot Listing HTML5 Website Template</title>
+  <title>Hoax Detection</title>
 
   <!-- Bootstrap core CSS -->
   <link href="./static/css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +62,7 @@ https://templatemo.com/tm-564-plot-listing
 
               <div class="col-lg-3 align-self-right">
                 <fieldset>
-                  <button class="main-button" type="submit" value="Predict Now"><i class="fa fa-briefcase"></i>Predict
+                  <button id="btn_submit" class="main-button" type="submit" value="Predict Now"><img class="icon" src="../static/image/arrow.svg">Predict
                     Now</button>
                   <!-- <input type="submit" , value="predict"> -->
                 </fieldset>
@@ -72,28 +72,29 @@ https://templatemo.com/tm-564-plot-listing
         </div>
 
 
-        <br><br><br>
+        <div class="container" id="result">
+          {% if pred == 0 %}
+          <h2 class="predict" style="color:green;" onClick="window.location.reload()">Fact</h2>
+          {% elif pred == 1 %}
+          <h2 class="predict" style="color:red;" onClick="window.location.reload()">Hoax</h2>
+          {% endif %}          
+        </div>
 
-        {% if pred == 0 %}
-        <h2 align="center" style="color:green;">Fact</h2>
-        {% elif pred == 1 %}
-        <h2 align="center" style="color:red;">Hoax</h2>
-        {% endif %}
-
+        <br>
+        <center><a class="btn btn-outline-light" id="reset-btn" href="/">Reset</a></center>
         <br>
 
 
-        <div class="col-lg-10 offset-lg-1">
+        <!-- <div class="col-lg-10 offset-lg-1">
           <ul class="categories">
             <li><a href="#"><span class="icon"><img src="../static/image/search-icon-05.png" alt="Travel"></span> About
                 Us</a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 
-  
 
 
   <!-- Scripts -->
