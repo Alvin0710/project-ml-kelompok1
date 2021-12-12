@@ -23,14 +23,15 @@ def predict():
 		input_title = request.form['input_title']
 		data = [input_title]
 		vect = cv.transform(data).toarray()
-		my_prediction = mnb.predict_proba(vect)
- 		output='{0:.{1}f}'.format(my_prediction[0][1], 2)
+		my_prediction = mnb.predict(vect)
+		# my_prediction = mnb.predict_proba(vect)
+ 		# output='{0:.{1}f}'.format(my_prediction[0][1], 2)
 
-    	if output>str(0.5):
-    	    return render_template('home.html',pred='Your Forest is in Danger.\nProbability of fire occuring is {}'.format(output),bhai="kuch karna hain iska ab?")
-    	else:
-        	return render_template('home.html',pred='Your Forest is safe.\n Probability of fire occuring is {}'.format(output),bhai="Your Forest is Safe for now")
-	# return render_template('result.html', prediction = my_prediction)
+    	# if output>str(0.5):
+    	#     return render_template('home.html',pred='Your Forest is in Danger.\nProbability of fire occuring is {}'.format(output),bhai="kuch karna hain iska ab?")
+    	# else:
+        # 	return render_template('home.html',pred='Your Forest is safe.\n Probability of fire occuring is {}'.format(output),bhai="Your Forest is Safe for now")
+	return render_template('result.html', prediction = my_prediction)
 
 
 
