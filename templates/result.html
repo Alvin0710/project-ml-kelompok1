@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+</head>
+<body>
+	{% if prediction == 0 %}
+	<h2 style="color:red;">Real</h2>
+	{% elif prediction == 1 %}
+	<h2 style="color:blue;">Hoax</h2>
+	{% endif %}
+</body>
+</html>
