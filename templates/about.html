@@ -56,15 +56,26 @@
             border-radius: 10rem;
         }
 
-        /* #title {
-            margin-top: 18rem;
-        }*/
-
         .bg-about {
             position: relative;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+
+        #alvin{
+            background-image: url('../static/image/alvin.jpeg');
+            background-size: cover;
+        }
+
+        #baby{
+            background-image: url('../static/image/baby.jpeg');
+            background-size: cover;
+        }
+
+        #diki{
+            background-image: url('../static/image/diki.jpeg');
+            background-size: cover;
         }
     </style>
 </head>
@@ -73,10 +84,10 @@
     <nav class="navbar fixed-top justify-content-end">
         <a class="navbar-brand" href="#">
             <img src="../static/image/WHITE.png" id="kampusmerdeka" width="30" height="30" alt="">
-          </a>
-          <a class="navbar-brand" href="#">
+        </a>
+        <a class="navbar-brand" href="#">
             <img src="../static/image/kemendikbud.png" id="kampusmerdeka" width="30" height="30" alt="">
-          </a>
+        </a>
         <a class="btn btn-outline-light btn-sm" id="about" href="/">Home</a>
     </nav>
 
@@ -84,7 +95,8 @@
         <div id="main-layout">
 
             <div class="container team">
-                <h1 class="display-4 text-center font-weight-bold text-light" data-aos="zoom-in" id="text-title">Meet Our Awesome Team
+                <h1 class="display-4 text-center font-weight-bold text-light" data-aos="zoom-in" id="text-title">Meet
+                    Our Awesome Team
                 </h1>
                 <p class="info text-center text-light" data-aos="fade-up">Below are the names of the
                     members of our team
@@ -94,20 +106,21 @@
             <div class="container team">
                 <div class="row text-center pt-3">
                     <div class="col-sm my-5" data-aos="fade-right">
-                        <div class="container-team mx-auto d-block">
+                        <div class="container-team mx-auto d-block" id="alvin">
                         </div>
                         <p class="pt-3 text-center text-light"><b class="font-weight-bold">Alvin
                                 Irwanto</b><br>
                             University Student</p>
                     </div>
                     <div class="col-sm my-5" data-aos="zoom-out">
-                        <div class="container-team mx-auto d-block">
+                        <div class="container-team mx-auto d-block" id="baby">
                         </div>
-                        <p class="pt-3 text-center text-light"><b class="font-weight-bold">Baby Aisha Maritza Virginia</b><br>
+                        <p class="pt-3 text-center text-light"><b class="font-weight-bold">Baby Aisha Maritza
+                                Virginia</b><br>
                             University Student</p>
                     </div>
                     <div class="col-sm my-5" data-aos="fade-left">
-                        <div class="container-team mx-auto d-block"></div>
+                        <div class="container-team mx-auto d-block" id="diki"></div>
                         <p class="pt-3 text-center text-light"><b class="font-weight-bold">Ilham Dyki Mu'ahfi</b><br>
                             University Student</p>
                     </div>
