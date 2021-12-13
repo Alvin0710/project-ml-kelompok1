@@ -1,8 +1,3 @@
-/* body {
-    background-image: url(../image/wallpaper.jpg) !important;
-    top: 100rem;
-} */
-
 #bg-about{
     /* background-image: url(../image/wallpaper.jpg) !important; */
     background-color: blue;
@@ -14,13 +9,6 @@ html, body {
     /* overflow-x: hidden;
     overflow-y: hidden; */
   }
-/* 
-#main-layout{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
 
 .navbar{
     position: fixed; 
@@ -30,10 +18,6 @@ html, body {
     top:0;
     margin:0 0;
 }
-
-/* #kampusmerdeka{
-    margin-left: 4vw;
-} */
 
 #about{
     margin-right: 4vw;
