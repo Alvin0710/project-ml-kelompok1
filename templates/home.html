@@ -8,13 +8,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
     integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
@@ -30,6 +23,23 @@
   <link rel="stylesheet" href="../static/css/templatemo-plot-listing.css">
   <link rel="stylesheet" href="../static/css/animated.css">
   <link rel="stylesheet" href="../static/css/owl.css">
+  <link rel="stylesheet" href="../static/css/aos.css">
+  <link rel="icon" href="../static/image/kemendikbud.png">
+
+  <style>
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-banner {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 
   <!-- TemplateMo 564 Plot Listing
 
@@ -39,10 +49,14 @@ https://templatemo.com/tm-564-plot-listing
 </head>
 
 <body>
+  <!-- Image and text -->
+  <nav class="navbar navbar-light bg-white fixed-top justify-content-end">
+    <a class="btn btn-outline-light btn-sm" id="about" href="/about">About us</a>
+  </nav>
 
-  <div class="main-banner">
+  <div class="main-banner" id="main-layout">
     <div class="container">
-      <div class="row">
+      <div class="row" data-aos="zoom-in">
         <div class="col-lg-12">
           <div class="top-text header-text">
             <h6>Kelompok 1</h6>
@@ -50,7 +64,6 @@ https://templatemo.com/tm-564-plot-listing
           </div>
         </div>
         <div class="col-lg-12">
-
           <form id="search-form" action="{{ url_for('predict')}}" method="POST">
             <div class="row">
 
@@ -62,7 +75,8 @@ https://templatemo.com/tm-564-plot-listing
 
               <div class="col-lg-3 align-self-right">
                 <fieldset>
-                  <button id="btn_submit" class="main-button" type="submit" value="Predict Now"><img class="icon" src="../static/image/arrow.svg">Predict
+                  <button id="btn_submit" class="main-button" type="submit" value="Predict Now"><img class="icon"
+                      src="../static/image/arrow.svg">Predict
                     Now</button>
                   <!-- <input type="submit" , value="predict"> -->
                 </fieldset>
@@ -74,10 +88,12 @@ https://templatemo.com/tm-564-plot-listing
 
         <div class="container" id="result">
           {% if pred == 0 %}
-          <h2 class="predict" style="color:green;" onClick="window.location.reload()">Fact</h2>
+          <p class="sub-predict">Hasil prediksi model menunjukkan bahwa kalimat tersebut merupakan : </p>
+          <h1 class="predict" style="color:green;" onClick="window.location.reload()">Fact</h1>
           {% elif pred == 1 %}
-          <h2 class="predict" style="color:red;" onClick="window.location.reload()">Hoax</h2>
-          {% endif %}          
+          <p class="sub-predict">Hasil prediksi model menunjukkan bahwa kalimat tersebut merupakan : </p>
+          <h1 class="predict" style="color:red;" onClick="window.location.reload()">Hoax</h1>
+          {% endif %}
         </div>
 
         <br>
@@ -85,12 +101,7 @@ https://templatemo.com/tm-564-plot-listing
         <br>
 
 
-        <!-- <div class="col-lg-10 offset-lg-1">
-          <ul class="categories">
-            <li><a href="#"><span class="icon"><img src="../static/image/search-icon-05.png" alt="Travel"></span> About
-                Us</a></li>
-          </ul>
-        </div> -->
+
       </div>
     </div>
   </div>
@@ -98,23 +109,20 @@ https://templatemo.com/tm-564-plot-listing
 
 
   <!-- Scripts -->
+  <script src='../static/js/aos.js'></script>
+  <script type="text/javascript">
+      AOS.init({
+          offset: 50,
+          duration: 1000,
+      });
+  </script>
+
   <script src="../static/js/jquery.min.js"></script>
   <script src="../static/js/bootstrap.bundle.min.js"></script>
   <script src="../static/js/owl-carousel.js"></script>
   <script src="../static/js/animation.js"></script>
   <script src="../static/js/imagesloaded.js"></script>
   <script src="../static/js/custom.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script> -->
 
 </body>
 
